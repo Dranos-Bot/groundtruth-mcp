@@ -11,7 +11,8 @@ console.log("tools:", tools.map((t) => t.name).join(", "));
 
 // get_pricing is free and has no side effects — a safe first call.
 const pricing = await client.callTool({ name: "get_pricing", arguments: {} });
-console.log(JSON.parse(pricing.content[0].text).groundtruth.plans.map((p) => `${p.name}: $${p.price}`));
+const plans = JSON.parse(pricing.content[0].text).groundtruth.plans;
+console.log(plans.map((p) => `${p.name}: ${p.price == null ? "custom" : "$" + p.price}`));
 
 // read_scan is ADVISORY. A certified technician reviews and signs off before any coring.
 // const scan = await client.callTool({ name: "read_scan",
