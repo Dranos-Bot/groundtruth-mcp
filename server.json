@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.gtfi/groundtruth",
+  "title": "GroundTruth \u2014 subsurface scan QA & trade estimating",
+  "description": "Two independent AI models read a GPR, locate or pipe scan and flag the do-not-core call.",
+  "version": "1.0.0",
+  "websiteUrl": "https://gtfi.ai/for-agents",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gtfi.ai/mcp"
+    }
+  ]
+}
